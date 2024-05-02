@@ -15,7 +15,8 @@
             <li>{{ item_name }}: {{ calories|format_float(0) }} カロリー</li>
             {% endfor %}
         </ul>
-        <p>Total Nutritional Values: Calories - {{ total['Calories']|format_float }}, Protein - {{ total['Protein']|format_float }}, Carbs - {{ total['Carbs']|format_float }}, Fat - {{ total['Fat']|format_float }}, Salt - {{ total['Salt']|format_float }}, Human Rights - {{ total['Human Rights']|format_float }}</p>
+        <p>Total Nutritional Values: Calories - {{ total['Calories']|format_float }}, Protein - {{ total['Protein']|format_float }}, Carbs - {{ total['Carbs']|format_float }}, Fat - {{ total['Fat']|format_float }}, Salt - {{ total['Salt']|format_float }}, Human Rights - {{ total['Human Rights']|default(0) |format_float }}</p>
+
     </div>
     {% endfor %}
 </body>
