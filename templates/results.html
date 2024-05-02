@@ -1,0 +1,22 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>結果</title>
+</head>
+<body>
+    <h1>おすすめメニュー</h1>
+    {% for solution, total in zipped_solutions %}
+    <div>
+        <h2>Solution {{ loop.index }}</h2>
+        <ul>
+            {% for item_name, calories in solution %}
+            <li>{{ item_name }}: {{ calories|format_float(0) }} カロリー</li>
+            {% endfor %}
+        </ul>
+        <p>Total Nutritional Values: Calories - {{ total['Calories']|format_float }}, Protein - {{ total['Protein']|format_float }}, Carbs - {{ total['Carbs']|format_float }}, Fat - {{ total['Fat']|format_float }}, Salt - {{ total['Salt']|format_float }}, Human Rights - {{ total['Human Rights']|format_float }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
